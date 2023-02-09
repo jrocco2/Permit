@@ -5,13 +5,11 @@ import { ethers } from "ethers";
 import Head from 'next/head';
 import styles from '../styles/Home.module.css';
 import { useEffect, useState } from 'react';
-import { TypedDataUtils } from "ethers-eip712";
-import { abi, generateTypedData, getPermit } from './typeData';
+import { abi, getPermit } from './typeData';
 
 const Home: NextPage = () => {
   const [balance, setBalance] = useState("0");
   const [userAddress, setUserAddress] = useState("");
-  const [signedMessage, setSignedMessage] = useState("No Message Set");
 
   const { data: signer, isError, isLoading } = useSigner();
 
@@ -68,7 +66,6 @@ const Home: NextPage = () => {
       .signMessage("0x6101406040523480156200001257600080fd5b506040518060400160405280600781526020017f4d79546f6b656e00000000000000000000000000000000000000000000000000815250806040518060400160405280600181526020017f31000000000000000000000000000000000000000000000000000000000000008152506040518060400160405280600781526020017f4d79546f6b656e00000000000000000000000000000000000000000000000000")
       .then((signature) => {
         console.log('Signature: ', signature);
-        setSignedMessage(signature);
       })
       .catch((error) => {
         console.log('Error: ', error);
@@ -103,7 +100,7 @@ const Home: NextPage = () => {
         <ConnectButton />
 
         <h1 className={styles.title}>
-          Welcome to the <a href="">Signature</a> Express!
+          Welcome to the <a href="">Signature</a> Express! 🚀
         </h1>
 
         <p className={styles.description}>
@@ -130,9 +127,7 @@ const Home: NextPage = () => {
       </main>
 
       <footer className={styles.footer}>
-        <a href="https://rainbow.me" target="_blank" rel="noopener noreferrer">
-          Made with ❤️ by your frens at 🌈
-        </a>
+        🚀🚀🚀🚀🚀🚀🚀🚀
       </footer>
     </div>
   );
